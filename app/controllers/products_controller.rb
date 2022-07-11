@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.comments.new
+    #@product.comments.new
   end
 
   def create

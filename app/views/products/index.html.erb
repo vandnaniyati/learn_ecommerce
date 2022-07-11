@@ -1,1 +1,11 @@
-jkfhdkj
+<h1>Product</h1>
+
+<ul>
+  <% @product.each do |product| %>
+	<li>
+	  <%= link_to product.name, product%>
+	</li>
+  <% end %>
+</ul>
+
+<%= link_to "NewBrand", new_product_path %>
