@@ -12,7 +12,7 @@ class BrandsController < ApplicationController
   end
 
   def create
-    @brand = rand.new(brand_params)
+    @brand = Brand.new(brand_params)
 
     if @brand.save
       redirect_to @brand
@@ -46,6 +46,6 @@ class BrandsController < ApplicationController
   private
     
     def brand_params
-      params.require(:brand).permit(:name)
+      params.require(:brand).permit(:name, reviews_attributes: [:rating_id, :rating_type, :id, :description])
     end
 end
