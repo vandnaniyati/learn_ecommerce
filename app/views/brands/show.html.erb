@@ -3,5 +3,12 @@
   <%= @brand.name %>
 </p>
 
+<p>
+  <strong>Review</strong>
+  <% @brand.reviews.each do |p| %>
+   <p><%= p.description %></p>
+  <% end %>
+</p>
+
 <%= link_to 'edit', edit_brand_path %>
 <%= link_to 'back', brands_path %>

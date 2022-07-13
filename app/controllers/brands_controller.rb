@@ -9,6 +9,7 @@ class BrandsController < ApplicationController
 
   def new
     @brand = Brand.new
+    @brand.reviews.new
   end
 
   def create
@@ -23,6 +24,7 @@ class BrandsController < ApplicationController
 
   def edit
     @brand = Brand.find(params[:id])
+    @brand.reviews.new
   end
 
   def update
