@@ -1,4 +1,7 @@
-<h1>Product</h1>
+<div class="d-flex align-items-center justify-content-center" >
+
+<h1 class="font-italic">Product</h1>
+</div>
 
 <ul>
   <% @product.each do |product| %>
@@ -10,9 +13,14 @@
 
 
 
-<%= link_to "NewProduct", new_product_path %> ||
-<%= link_to "Brand", brands_path %>
+<%= link_to "NewProduct", new_product_path %>
+<%#= link_to "Brand", brands_path %>
 
 
-
+<div class="fixed-bottom">
 <%= will_paginate @product %>
+</div>
+
+
+
+
