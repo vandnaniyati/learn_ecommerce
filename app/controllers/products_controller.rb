@@ -6,11 +6,13 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+
   end
 
   def new
     @product = Product.new
     @product.reviews.new
+    @product.variants.new
   end
 
   def create
@@ -25,9 +27,11 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    if @product.reviews.count == @product.reviews.pluck(:description).compact_blank.count
-      @product.reviews.new
-    end
+    @product.variants.new
+
+    #if @product.reviews.count == @product.reviews.pluck(:description).compact_blank.count
+      #@product.reviews.new
+    #end
   end
 
   def update
@@ -52,6 +56,7 @@ class ProductsController < ApplicationController
     
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price, reviews_attributes: [:rating_id, :rating_type, :id, :description])
+      params.require(:product).permit(:name, :price, reviews_attributes: [:rating_id, :rating_type, :id, :description],
+      variants_attributes: [:id, :size])
     end
 end

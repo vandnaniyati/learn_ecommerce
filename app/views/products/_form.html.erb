@@ -21,6 +21,13 @@
     <%= form.text_field :price %>
   </div>
 
+  <%= form.fields_for :variants do |d| %>
+    <div>
+      <%= d.label :size %>
+      <%= d.text_field :size %>
+    </div>
+  <% end %>
+
   <%= form.fields_for :reviews do |f| %>
   	<div>
   	  <%= f.label :review %>

@@ -5,4 +5,5 @@ Rails.application.routes.draw do
  resources :brands
  resources :variants
  resources :reviews
+ resources :mains
 end

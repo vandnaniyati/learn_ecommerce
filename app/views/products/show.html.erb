@@ -9,9 +9,16 @@
 </p>
 
 <p>
+  <strong>size</strong>
+  <% @product.variants.each do |p| %>
+   <p><%= p.size %></p>
+  <% end %>
+</p>
+
+<p>
   <strong>Review</strong>
   <% @product.reviews.each do |p| %>
-   <p><%= p.description %></p>
+    <p><%= p.description %></p>
   <% end %>
 </p>
 
