@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
- root "products#index"
-
+ root "mains#index"
+ get "sign_up", to: "registrations#new"
+ post "sign_up", to: "registrations#create"
+ delete "logout", to: "sessions#destroy"
+ 
  resources :products
  resources :brands
  resources :variants
