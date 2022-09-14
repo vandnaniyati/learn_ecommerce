@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+
   has_many :reviews, as: :rating, dependent: :destroy
   has_many :variants
   self.per_page = 10

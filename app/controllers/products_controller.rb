@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
   end 
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
     @product.destroy
 
     redirect_to product_path, status: :see_other
