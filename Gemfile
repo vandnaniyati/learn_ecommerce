@@ -21,6 +21,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+
 
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
